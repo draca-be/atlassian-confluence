@@ -32,7 +32,7 @@ find ${CONF_CERTS} -name *.crt -print0 | while IFS= read -r -d $'\0' line; do
     name=$(basename $line)
 
     # Make sure if one exists it is deleted first
-    ${JAVA_HOME}/bin/keytool -delete -storepass changeit -noprompt -alias "${name}" -keystore ${JAVA_HOME}/jre/lib/security/cacerts
+    ${JAVA_HOME}/bin/keytool -delete -storepass changeit -noprompt -alias "${name}" -keystore ${JAVA_HOME}/jre/lib/security/cacerts 2>&1 >/dev/null
     ${JAVA_HOME}/bin/keytool -import -storepass changeit -noprompt -alias "${name}" -keystore ${JAVA_HOME}/jre/lib/security/cacerts -file "${line}"
 done
 
