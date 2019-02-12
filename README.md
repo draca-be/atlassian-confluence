@@ -1,4 +1,4 @@
-# 
+# Atlassian Confluence
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/draca/atlassian-confluence.svg)](https://hub.docker.com/r/draca/atlassian-confluence/)
 [![Build Status](https://img.shields.io/docker/build/draca/atlassian-confluence.svg)](https://hub.docker.com/r/draca/atlassian-confluence/builds/)
@@ -112,4 +112,4 @@ services:
 
 # Disclaimer
 
-A lot of care was taking in creating these images however running them is at your own risk and no claims can be made should data loss occur. By using these images you confirm that you are complying by any and all of the licenses of the 3rd party software included in this build.
+A lot of care was taken in creating these images however running them is at your own risk and no claims can be made should data loss occur. By using these images you confirm that you are complying by any and all of the licenses of the 3rd party software included in this build.
