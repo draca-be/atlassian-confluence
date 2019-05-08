@@ -1,6 +1,16 @@
-FROM adoptopenjdk/openjdk8:jdk8u202-b08-alpine
+FROM adoptopenjdk/openjdk8:jdk8u212-b03-alpine
 
-RUN apk add --no-cache bash
+
+RUN echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
+    && echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
+    && apk add --no-cache \
+    bash \
+    ttf-dejavu fontconfig && \
+    fc-cache -f
+
+
+ENV LD_LIBRARY_PATH=/usr/lib:/lib
+RUN ln -s /usr/lib/libfontconfig.so.1 /usr/lib/libfontconfig.so
 
 MAINTAINER draca <info@draca.be>
 
